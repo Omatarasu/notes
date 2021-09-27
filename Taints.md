@@ -4,8 +4,8 @@
 
 > NoSchedule - if pod exist on node, then it continues to running  
   
-## Example yaml File
-    apiVersion: apps/v1
+## Example yaml Files
+	apiVersion: apps/v1
     kind: Deployment
     ...
     spec:
@@ -20,7 +20,7 @@
     
 > Need to specify value
 
-    apiVersion: apps/v1
+  	apiVersion: apps/v1
     kind: Deployment
     ...
     spec:

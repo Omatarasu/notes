@@ -29,7 +29,7 @@
          ...
          tolerations:
          - key: "key"
-           operator: "Equal"
+           operator: "Exist"
            effect: "NoSchedule"
     
 > Correct for all value

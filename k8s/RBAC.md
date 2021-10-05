@@ -38,8 +38,8 @@
 	metadata:	
   	  name: read-secrets-global
 	subjects:
-    - kind: Group
-  	  name: manager 
+    - kind: User
+  	  name: Anna
       apiGroup: rbac.authorization.k8s.io
     roleRef:
       kind: ClusterRole

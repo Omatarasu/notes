@@ -27,8 +27,11 @@
     rules:
     - apiGroups: [""] # "" indicates the core API group
       resources: ["pods"]
+      resourceName: ["my-pod", "my-pod-1"]  
       verbs: ["get", "watch", "list"]
 > create Role pod-reader in default namespace
+
+> allow only for pods my-pod and my-pod-1
 
 	apiVersion: rbac.authorization.k8s.io/v1
 	kind: ClusterRoleBinding

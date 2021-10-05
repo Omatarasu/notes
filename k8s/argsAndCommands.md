@@ -4,7 +4,7 @@
 
 	CMD ["sleep", "5"] # execute, when container started
 
-	docker run ubuntu-sleeper
+> docker run ubuntu-sleeper
 
 	FROM Ubuntu
 
@@ -19,11 +19,11 @@
 
 	CMD ["5"] # default value
 
->docker run  ubuntu-sleeper
+> docker run  ubuntu-sleeper
 
 set another value
 
->docker run  ubuntu-sleeper 50 
+> docker run  ubuntu-sleeper 50 
 
 	apiVersion: v1
 	kind: Pod

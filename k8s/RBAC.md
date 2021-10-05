@@ -39,13 +39,13 @@
   	  name: read-secrets-global
 	subjects:
     - kind: User
-  	  name: Anna
+  	  name: anna
       apiGroup: rbac.authorization.k8s.io
     roleRef:
       kind: ClusterRole
       name: secret-reader
       apiGroup: rbac.authorization.k8s.io
-> add manager to role secret-reader
+> add anna to role secret-reader
 
 
 

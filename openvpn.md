@@ -30,4 +30,34 @@ openssl ca -selfsign \
 -out ca.crt \
 -extensions v3_ca
 ```
-> 
+> sign ca cert
+```
+openssl req -nodes \
+-new \
+-out server.csr \
+-keyout private/server.key \
+-extensions vpn_server
+```
+> create server req
+```
+openssl ca -in server.csr \
+-out server.crt \
+-extensions vpn_server
+```
+> sign server cert
+```
+openssl req -nodes \
+-new \
+-out client.csr \
+-keyout private/client.key \
+-extensions vpn_server
+```
+> create client req
+```
+openssl ca -in client.csr \
+-out client.crt \
+-extensions vpn_client
+```
+> sign client cert
+
+

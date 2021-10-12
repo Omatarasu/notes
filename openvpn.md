@@ -131,4 +131,4 @@ verb 3
 # can automatically reconnect.
 explicit-exit-notify 1
 ```
-> server config
+> server config file

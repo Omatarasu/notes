@@ -7,6 +7,8 @@
 - nat on CA_OPENVPN-SERVER, ISP 
 - install epel-release on CentOS
 - install openvpn
+- add port in firewall
+- 
 ### CA
 [openssl.cnf](https://github.com/Omatarasu/notes/files/7328751/openssl.txt)
 ```
@@ -60,5 +62,73 @@ openssl ca -in client.csr \
 -extensions vpn_client
 ```
 > sign client cert
-
-
+# SERVER AND CLIENT
+```
+client
+dev tun
+proto udp
+remote 192.168.10.2 1194
+resolv-retry infinite
+nobind
+user nobody # CentOS
+group nogroup
+persist-key
+persist-tun
+ca /etc/openvpn/ca.crt
+cert /etc/openvpn/client.crt
+key /etc/openvpn/client.key
+remote-cert-tls server
+cipher AES-256-CBC
+comp-lzo
+# Set log file verbosity.
+verb 3
+# Silence repeating messages
+;mute 20
+```
+> client config file 
+```
+local 192.168.10.2
+port 1194
+proto udp
+dev tun
+ca /etc/openvpn/ca.crt
+cert /etc/openvpn/server.crt
+key /etc/openvpn/server.key  # This file should be kept secret
+#   openssl dhparam -out dh2048.pem 2048
+dh /etc/openvpn/dh.pem
+topology subnet
+server 10.0.0.0 255.255.255.0
+# ifconfig-pool-persist ipp.txt
+push "route 192.168.0.0 255.255.255.0"
+duplicate-cn
+keepalive 10 120
+# Generate with:
+#   openvpn --genkey --secret ta.key
+# The second parameter should be '0'
+# on the server and '1' on the clients.
+# tls-auth ta.key 0 # This file is secret
+cipher AES-256-CBC
+comp-lzo
+user nobody # Debian
+group nobody
+persist-key
+persist-tun
+status openvpn-status.log
+;log-append  openvpn.log
+# Set the appropriate level of log
+# file verbosity.
+#
+# 0 is silent, except for fatal errors
+# 4 is reasonable for general usage
+# 5 and 6 can help to debug connection problems
+# 9 is extremely verbose
+verb 3
+# Silence repeating messages.  At most 20
+# sequential messages of the same message
+# category will be output to the log.
+;mute 20
+# Notify the client that when the server restarts so it
+# can automatically reconnect.
+explicit-exit-notify 1
+```
+> server config

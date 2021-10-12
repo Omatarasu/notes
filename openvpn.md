@@ -8,6 +8,7 @@
 - install epel-release on CentOS
 - install openvpn
 ### CA
+[openssl.cnf](https://github.com/Omatarasu/notes/files/7328751/openssl.txt)
 ```
 mkdir /etc/ca
 cd /etc/ca

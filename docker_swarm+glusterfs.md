@@ -162,3 +162,32 @@ mount -a
 df | grep share
 ```
 > mount gluster volume
+
+## All
+```
+sudo yum install -y yum-utils
+sudo yum-config-manager \
+--add-repo \
+https://download.docker.com/linux/centos/docker-ce.repo
+```
+> add docker repo
+```
+sudo yum install docker-ce --allowerasing -y
+```
+> download docker
+```
+systemctl enable --now docker
+systemctl status docker
+```
+> enbale docker
+```
+firewall-cmd --add-service=docker-swarm --permanent 
+firewall-cmd --reload
+```
+> add firewall rules for docker swarm
+```
+docker swarm init ...
+docker swarm join-token manager 
+docker swarm join ...
+```
+> create docker swarm cluster 

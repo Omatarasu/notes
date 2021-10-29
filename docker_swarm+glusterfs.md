@@ -1,0 +1,128 @@
+# Topology
+![Untitled Diagram drawio](https://user-images.githubusercontent.com/62337797/139422875-d51cfde5-b257-4d01-8397-1fba1ca4db4f.png)
+# node01
+
+```
+mkfs.xfs /dev/vdb 
+```
+> create file system 
+```
+mkdir -p /gluster/volumes/1
+echo '/dev/vdb /gluster/volumes/1 xfs defaults 0 0' >> /etc/fstab
+mount -a
+```
+> mount file system
+```
+df | grep vdb
+```
+> check mount
+```
+mkdir /gluster/volumes/1/node01
+```
+> create directory
+```
+dnf install epel-release -y
+dnf install centos-release-gluster -y
+dnf install yum-utils -y
+```
+> install additional repos and yum utils
+```
+dnf install glusterfs-server -y
+```
+> install glusterfs
+```
+systemctl enable --now glusterd
+systemctl status glusterd
+```
+> start and enable glusterd
+```
+firewall-cmd --add-service=glusterfs --permanent 
+firewall-cmd --reload
+```
+> add firewall rules for glusterfs
+```
+gluster peer probe node02
+gluster peer probe node03
+```
+
+# node02
+
+```
+mkfs.xfs /dev/vdb 
+```
+> create file system 
+```
+mkdir -p /gluster/volumes/1
+echo '/dev/vdb /gluster/volumes/1 xfs defaults 0 0' >> /etc/fstab
+mount -a
+```
+> mount file system
+```
+df | grep vdb
+```
+> check mount
+```
+mkdir /gluster/volumes/1/node02
+```
+> create directory
+```
+dnf install epel-release -y
+dnf install centos-release-gluster -y
+dnf install yum-utils -y
+```
+> install additional repos and yum utils
+```
+dnf install glusterfs-server -y
+```
+> install glusterfs
+```
+systemctl enable --now glusterd
+systemctl status glusterd
+```
+> start and enable glusterd
+```
+firewall-cmd --add-service=glusterfs --permanent 
+firewall-cmd --reload
+```
+> add firewall rules for glusterfs
+
+# node03
+
+```
+mkfs.xfs /dev/vdb 
+```
+> create file system 
+```
+mkdir -p /gluster/volumes/1
+echo '/dev/vdb /gluster/volumes/1 xfs defaults 0 0' >> /etc/fstab
+mount -a
+```
+> mount file system
+```
+df | grep vdb
+```
+> check mount
+```
+mkdir /gluster/volumes/1/node03
+```
+> create directory
+```
+dnf install epel-release -y
+dnf install centos-release-gluster -y
+dnf install yum-utils -y
+```
+> install additional repos and yum utils
+```
+dnf install glusterfs-server -y
+```
+> install glusterfs
+```
+systemctl enable --now glusterd
+systemctl status glusterd
+```
+> start and enable glusterd
+```
+firewall-cmd --add-service=glusterfs --permanent 
+firewall-cmd --reload
+```
+> add firewall rules for glusterfs

@@ -56,3 +56,5 @@ systemctl restart sssd
 > time and date same on all machines 
 
 > correct configure dns 
+# Source
+https://www.golinuxcloud.com/add-linux-to-windows-ad-domain-realm/

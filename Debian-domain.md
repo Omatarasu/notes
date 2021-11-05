@@ -124,3 +124,6 @@ systemctl restart smbd
 systemctl restart winbind
 ```
 > restart services
+# Sources 
+https://help.ubuntu.ru/wiki/%D0%B2%D0%B2%D0%BE%D0%B4_%D0%B2_%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD_windows
+https://imbicile.pp.ru/ubuntu-16-04-active-directory/

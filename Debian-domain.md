@@ -73,17 +73,15 @@ kinit Administrator@ANGULEMA.FUN
 
 #### /etc/hosts
 ```
-Add:
 127.0.1.1  debian.angulema.fun debian
 ```
-> content
+> add content
 ```
 net ads join -U Administrator -D ANGULEMA.FUN 
 ```
 > connect to ad 
 #### /etc/samba/smb.conf
 ```
-Add:
    idmap config * : range = 10000-20000
    idmap config * : backend = tdb 
    

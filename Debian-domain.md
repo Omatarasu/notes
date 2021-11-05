@@ -97,8 +97,9 @@ Add:
 
    winbind refresh tickets = yes
 ```
-> add winbind config 
-/etc/nsswitch.conf 
+> add winbind config
+ 
+#### /etc/nsswitch.conf 
 ```
 passwd:         files systemd winbind
 group:          files systemd winbind

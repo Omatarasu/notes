@@ -78,6 +78,6 @@ Add:
 ```
 > content
 ```
-net ads join -U Administrator -D ANGULEMA.FUN --no-dns-updates
+net ads join -U Administrator -D ANGULEMA.FUN 
 ```
 > connect to ad 

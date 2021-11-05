@@ -81,3 +81,47 @@ Add:
 net ads join -U Administrator -D ANGULEMA.FUN 
 ```
 > connect to ad 
+#### /etc/samba/smb.conf
+```
+Add:
+   idmap config * : range = 10000-20000
+   idmap config * : backend = tdb 
+   
+   winbind enum groups = yes
+   winbind enum users = yes
+
+   winbind use default domain = yes
+
+   template shell = /bin/bash
+   template homedir = /home/%U
+
+   winbind refresh tickets = yes
+```
+> add winbind config 
+/etc/nsswitch.conf 
+```
+passwd:         files systemd winbind
+group:          files systemd winbind
+shadow:         files winbind
+gshadow:        files
+
+hosts:          files dns
+networks:       files
+
+protocols:      db files
+services:       db files
+ethers:         db files
+rpc:            db files
+
+netgroup:       nis
+```
+> add winbind auth
+```
+pam-auth-update
+```
+> check the box create homedir
+```
+systemctl restart smbd
+systemctl restart winbind
+```
+> restart services

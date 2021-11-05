@@ -76,6 +76,7 @@ kinit Administrator@ANGULEMA.FUN
 Add:
 127.0.1.1  debian.angulema.fun debian
 ```
+> content
 ```
 net ads join -U Administrator -D ANGULEMA.FUN --no-dns-updates
 ```

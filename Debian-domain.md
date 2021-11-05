@@ -70,6 +70,12 @@ kinit Administrator@ANGULEMA.FUN
    obey pam restrictions = yes
 ```
 > content
+
+#### /etc/hosts
+```
+Add:
+127.0.1.1  debian.angulema.fun debian
+```
 ```
 net ads join -U Administrator -D ANGULEMA.FUN --no-dns-updates
 ```

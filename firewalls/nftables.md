@@ -1,3 +1,4 @@
+## FILTER
 ```
 nft add table inet filter
 ```
@@ -24,3 +25,20 @@ nft add rule inet filter input icmp type echo-request counter acccept
 nft add rule inet filter input ct state established,related counter accept
 ```
 >  accept established and related connections 
+## NAT
+```
+nft add table nat
+```
+> create nat table
+```
+nft 'add chain nat postrouting { type nat hook postrouting priority 100 ; }'
+```
+> SNAT chain create (change destination address)
+```
+nft 'add chain nat prerouting { type nat hook prerouting priority -100; }'
+```
+> DNAT chain create (change source address)
+```
+nft add rule ip nat postrouting oifname "enp1s0" counter masquerade 
+```
+> MASQUEARDE chain create (all package from enp1s0 snat)

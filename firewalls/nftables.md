@@ -41,4 +41,4 @@ nft 'add chain nat prerouting { type nat hook prerouting priority -100; }'
 ```
 nft add rule ip nat postrouting oifname "enp1s0" counter masquerade 
 ```
-> MASQUEARDE chain create (all package from enp1s0 snat)
+> MASQUEARDE chain create (all ipv4 package from enp1s0 snat)

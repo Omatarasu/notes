@@ -23,4 +23,4 @@ nft add rule inet filter input icmp type echo-request counter acccept
 ```
 nft add rule inet filter input ct state established,related counter accept
 ```
->  accept established connections 
+>  accept established and related connections 

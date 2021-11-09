@@ -42,3 +42,11 @@ nft 'add chain nat prerouting { type nat hook prerouting priority -100; }'
 nft add rule ip nat postrouting oifname "enp1s0" counter masquerade 
 ```
 > MASQUEARDE chain create (all ipv4 package from enp1s0 snat)
+```
+nft add rule nat postrouting ip saddr 192.168.1.0/24 oif enp1s0 snat to 1.2.3.4
+```
+> SNAT LAN 192.168.1.0/24 to global ip 1.2.3.4
+```
+nft 'add rule nat prerouting iif etp1s0 tcp dport { 80, 443 } dnat to 192.168.1.120'
+```
+> DNAT to http server 192.168.1.120

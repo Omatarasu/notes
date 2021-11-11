@@ -29,7 +29,7 @@ zone "121.168.192.in-addr.arpa" IN {
         604800          
         604800          
 )
-	IN	NS	node01.angulema.fun.
+@	IN	NS	node01.angulema.fun.
 
 node01	IN	A	192.168.121.10
 node02	IN	A	192.168.121.20
@@ -44,7 +44,7 @@ node03	IN	A	192.168.121.30
         604800          
         604800          
 )
-        IN	NS	node01.angulema.fun.
+@       IN	NS	node01.angulema.fun.
 
 10	IN	PTR	node01.angulema.fun.
 20	IN	PTR	node02.angulema.fun.

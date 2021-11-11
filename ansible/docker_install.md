@@ -7,10 +7,11 @@
    tasks:
    - block:
 
-     - name: Add Docker Repo
-       copy:
-         src: /etc/ansible/docker-ce.repo
-         dest: /etc/yum.repos.d/
+     - name: Add Docker repo
+       get_url:
+         url: https://download.docker.com/linux/centos/docker-ce.repo
+         dest: /etc/yum.repos.d/docer-ce.repo
+         
      - name: Remove Some Package
        dnf:
          name: 

@@ -1,5 +1,6 @@
 ### /etc/ansible/docker.yml
 ```
+---
  - name: Install Docker 
    hosts: nodes
    become: yes

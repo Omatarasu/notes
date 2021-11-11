@@ -1,3 +1,7 @@
+# CentOS
+```
+dnf install bind -y
+```
 ### /etc/named.conf
 ```
 options {

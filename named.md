@@ -12,7 +12,7 @@ options {
 
 zone "angulema.fun" IN {
         type master;
-        file "/etc/named/angulema.fun.db"
+        file "/etc/named/angulema.fun.db";
 };
 
 zone "121.168.192.in-addr.arpa" IN {

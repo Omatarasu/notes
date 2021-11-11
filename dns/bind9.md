@@ -43,7 +43,7 @@ node01	IN	A	192.168.121.10
 node02	IN	A	192.168.121.20
 node03	IN	A	192.168.121.30
 ```
-### /etc/named/121.168.192.in-addr.arpa.db
+### /etc/bind/121.168.192.in-addr.arpa.db
 ```
 $TTL    604800
 @       IN  SOA     node01.angulema.fun. admin.angulema.fun. (

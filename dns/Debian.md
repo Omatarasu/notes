@@ -1,4 +1,4 @@
-# Debian
+# Install
 ```
 apt install bind9 -y
 ```

@@ -1,3 +1,7 @@
+# Debian
+```
+apt install bind9 -y
+```
 ### /etc/bind/named.conf.default-zones
 ```
 zone "angulema.fun" IN {

@@ -22,6 +22,7 @@ zone "121.168.192.in-addr.arpa" IN {
 ```
 ### /etc/named/angulema.fun.db
 ```
+$TTL    604800
 @    	IN 	SOA     node01.angulema.fun. admin.angulema.fun. (
         2      
         10800          
@@ -37,6 +38,7 @@ node03	IN	A	192.168.121.30
 ```
 ### /etc/named/121.168.192.in-addr.arpa.db
 ```
+$TTL    604800
 @       IN  SOA     node01.angulema.fun. admin.angulema.fun. (
         2017082401      
         10800          

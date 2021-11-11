@@ -1,4 +1,4 @@
-# CentOS
+# Install
 ```
 dnf install bind -y
 ```

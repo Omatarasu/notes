@@ -37,7 +37,7 @@ sudo mount -t nfs 192.168.121.10:/mnt/nfs /root/nfs
 ```
 > mount nfs share
 ```
-echo "192.168.121.10:/mnt/nfs /root/nfs nfs defaults 0 0" > /etc/fstab
+echo "192.168.121.10:/mnt/nfs /root/nfs nfs defaults 0 0" >> /etc/fstab
 mount -a
 ```
 > mount with fstab

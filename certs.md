@@ -1,4 +1,5 @@
-### /etc/pki/tls/openssl.cnf:
+### ( CentOS ) /etc/pki/tls/openssl.cnf: 
+### ( Debian ) /etc/ssl/openssl.cnf: 
 ```
 ...
 [ CA_default ]

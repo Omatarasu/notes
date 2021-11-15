@@ -25,6 +25,13 @@ exportfs -s
 ```
 > list of exports
 ```
+firewall-cmd --permanent --add-service=nfs 
+firewall-cmd --permanent --add-service=mountd 
+firewall-cmd --permanent --add-service=rpc-bind 
+firewall-cmd --reload
+```
+> add firewall rule for nfs
+```
 dnf install nfs-utils nfs4-acl-tools -y
 ```
 > on clients

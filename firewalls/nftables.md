@@ -14,6 +14,10 @@ nft add rule inet filter input tcp dport 22 counter accept
 ```
 > acccept ssh
 ```
+nft add rule inet filter input tcp dport 3260 counter accept
+```
+> accept iscsi target
+```
 nft add rule inet filter input iifname "lo" counter accept
 ```
 > accept loopback

@@ -48,3 +48,5 @@ cat /etc/iscsi/initiatorname.iscsi
 acls/ $iqn
 ```
 > access permission
+# Sources
+https://www.saqwel.ru/articles/linux/nastrojka-linux-iscsi-posredstvom-targetcli/

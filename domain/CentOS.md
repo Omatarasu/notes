@@ -38,6 +38,12 @@ dnf install sssd oddjob oddjob-mkhomedir adcli samba-common-tools -y
 ```
 > install required packages
 ```
+vim /etc/kr5.conf
+    allow_weak_crypto = true
+    default_tgs_enctypes = arcfour-hmac-md5 des-cbc-crc des-cbc-md5
+    default_tkt_enctypes = arcfour-hmac-md5 des-cbc-crc des-cbc-md5
+```
+```
 realm join --user=Administrator angulema.fun
 ```
 > join to domain

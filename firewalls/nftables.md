@@ -26,6 +26,10 @@ nft add rule inet filter input iifname "lo" counter accept
 ```
 > accept loopback
 ```
+nft add rule inet filter input udp dport 1194 counter accept
+```
+> allow openvpn
+```
 nft add rule inet filter input icmp type echo-request counter accept
 ```
 > accept icmp-requests

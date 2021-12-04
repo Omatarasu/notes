@@ -89,7 +89,7 @@ verb 3
 ```
 local 192.168.10.2
 port 1194
-proto udp
+proto udp4
 dev tun
 ca /etc/openvpn/ca.crt
 cert /etc/openvpn/server.crt
@@ -107,8 +107,7 @@ keepalive 10 120
 # The second parameter should be '0'
 # on the server and '1' on the clients.
 # tls-auth ta.key 0 # This file is secret
-cipher AES-256-CBC
-comp-lzo
+data-ciphers-fallback AES-256-CBC
 user nobody # Debian
 group nobody
 persist-key

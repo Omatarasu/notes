@@ -64,7 +64,7 @@ mode tunnel
 ### Create IPSEC Profile
 ```
 crypto ipsec profile A-L00
-set ikev2 profile A-L00-PROFILE
+set ikev2-profile A-L00-PROFILE
 set transform-set default
 ```
 ### Apply IPSEC Profile on GRE

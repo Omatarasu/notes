@@ -53,7 +53,7 @@ openssl req -nodes \
 -new \
 -out client.csr \
 -keyout private/client.key \
--extensions vpn_server
+-extensions vpn_client
 ```
 > create client req
 ```

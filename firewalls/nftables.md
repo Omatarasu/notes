@@ -35,6 +35,10 @@ nft add 'rule inet filter input tcp dport {137,138,139,445} counter accept'
 ```
 > allow samba
 ```
+nft add 'rule inet filter input udp dport {123,323} counter accept'
+```
+> ntp server
+```
 nft add rule inet filter input icmp type echo-request counter accept
 ```
 > accept icmp-requests

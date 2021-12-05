@@ -19,3 +19,4 @@ chmod 0770 -R /mnt/smb
 chown nobody:"domain users" -R /mnt/smb
 ```
 ### if you use centos disable selinux
+### Allow samba port in firewall

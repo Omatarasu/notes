@@ -74,16 +74,16 @@ user nobody # CentOS
 group nogroup
 persist-key
 persist-tun
-ca /etc/openvpn/ca.crt
+ca /etc/openvpn/ca.crt # if windows C:\\user\\
 cert /etc/openvpn/client.crt
 key /etc/openvpn/client.key
 remote-cert-tls server
-cipher AES-256-CBC
-comp-lzo
+data-ciphers-fallback AES-256-CBC
 # Set log file verbosity.
 verb 3
 # Silence repeating messages
 ;mute 20
+# auth-nocache # if windwos
 ```
 > client config file 
 ```

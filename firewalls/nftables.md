@@ -30,6 +30,11 @@ nft add rule inet filter input udp dport 1194 counter accept
 ```
 > allow openvpn
 ```
+nft add 'rule inet filter input udp dport {137,138,139,445} counter accept'
+nft add 'rule inet filter input tcp dport {137,138,139,445} counter accept'
+```
+> allow samba
+```
 nft add rule inet filter input icmp type echo-request counter accept
 ```
 > accept icmp-requests

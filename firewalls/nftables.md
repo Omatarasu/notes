@@ -25,6 +25,7 @@ nft add rule inet filter input ip protocol gre counter accept
 nft add rule inet filter input ip protocol esp counter accept
 nft add 'rule inet filter input iifname "ens160" udp {500, 4500} counter accept`
 ```
+> accept ipsec
 ```
 nft add rule inet filter input iifname "lo" counter accept
 ```

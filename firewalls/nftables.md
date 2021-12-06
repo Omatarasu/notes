@@ -22,28 +22,32 @@ nft add rule inet filter input ip protocol gre counter accept
 ```
 > accept gre
 ```
+nft add rule inet filter input ip protocol esp counter accept
+nft add 'rule inet filter input iifname "ens160" udp {500, 4500} counter accept`
+```
+```
 nft add rule inet filter input iifname "lo" counter accept
 ```
 > accept loopback
 ```
-nft add rule inet filter input udp dport 1194 counter accept
+nft add rule inet filter input iifname "ens160" udp dport 1194 counter accept
 ```
 > allow openvpn
 ```
-nft add 'rule inet filter input udp dport {137,138,139,445} counter accept'
-nft add 'rule inet filter input tcp dport {137,138,139,445} counter accept'
+nft add 'rule inet filter input iifname "ens160" udp dport {137,138,139,445} counter accept'
+nft add 'rule inet filter input iifname "ens160" tcp dport {137,138,139,445} counter accept'
 ```
 > allow samba
 ```
-nft add 'rule inet filter input udp dport {123,323} counter accept'
+nft add 'rule inet filter input iifname "ens160" udp dport {123,323} counter accept'
 ```
 > ntp server
 ```
-nft add rule inet filter input icmp type echo-request counter accept
+nft add rule inet filter input iifname "ens160" icmp type echo-request counter accept
 ```
 > accept icmp-requests
 ```
-nft add rule inet filter input ct state established,related counter accept
+nft add rule inet filter input iifname "ens160" ct state established,related counter accept
 ```
 >  accept established and related connections 
 ## NAT

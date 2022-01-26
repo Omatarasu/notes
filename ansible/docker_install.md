@@ -2,8 +2,7 @@
 ```
 ---
  - name: Install Docker 
-   hosts: nodes
-   become: yes
+   hosts: all
 
    tasks:
    - block:

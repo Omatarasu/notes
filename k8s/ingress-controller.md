@@ -31,7 +31,7 @@ kubectl taint nodes node4 node-role.kubernetes.io/ingress=:NoSchedule
     node-role.kubernetes.io/ingress: ""
 ...
 ```
-> configure ingress controller
+> configure ingress controller (values.yaml)
 ```
 kubectl create ns ingress-nginx
 helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --values values.yaml 

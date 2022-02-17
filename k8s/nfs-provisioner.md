@@ -44,3 +44,5 @@ kubectl get pv
 kubectl get sc
 ```
 > test all 
+# Important
+> Need install nfs-utils on k8s nodes

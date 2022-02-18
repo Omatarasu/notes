@@ -14,6 +14,16 @@ helm show values prometheus-community/prometheus > values.yaml
   ...
     storageClass: "nfs-client" # set sc
   ...
+  nodeExporter:
+  ...
+    tolerations: # tolerations to master and ingress
+    - key: "node-role.kubernetes.io/master"
+      operator: "Exists"
+      effect: "NoSchedule"
+    - key: "node-role.kubernetes.io/ingress"
+      operator: "Exists"
+      effect: "NoSchedule"
+  ...
   name: server
   ...
     storageClass: "nfs-client" # set sc

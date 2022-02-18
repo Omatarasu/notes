@@ -49,3 +49,34 @@ initChownData:
 helm install -n monitoring grafana grafana/grafana --values grafana-values.yaml 
 ```
 > install grafana
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-grafana
+  labels:
+    name: ingress-grafana
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grafana.k8s.local
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: grafana
+            port: 
+              number: 80
+```
+> ingrass-grafana.yaml
+```
+kubectl apply -f ingress-grafana.yaml
+```
+> start ingress
+```
+kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
+> get grafana pssword
+###Login to grafana web https://grafana.k8s.local. use admin login. connect prometheus

@@ -65,7 +65,7 @@ nft 'add chain nat prerouting { type nat hook prerouting priority -100; }'
 ```
 > DNAT chain create (change source address)
 ```
-nft add rule ip nat postrouting ip saddr 192.168.1.0/24 oifname "enp1s0" counter masquerade 
+nft add rule ip nat postrouting ip saddr 192.168.1.0/24 oif enp1s0 counter masquerade 
 ```
 > MASQUEARDE chain create (all packages from 192.168.1.0/24 snat to addr on enp1s0)
 ```

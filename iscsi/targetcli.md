@@ -45,7 +45,7 @@ cat /etc/iscsi/initiatorname.iscsi
 ```
 > see iqn in linux
 ```
-acls/ $iqn
+acls/ create $iqn
 ```
 > access permission
 # Sources

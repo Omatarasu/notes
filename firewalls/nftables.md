@@ -40,6 +40,10 @@ nft add 'rule inet filter input iifname "ens160" tcp dport {137,138,139,445} cou
 ```
 > allow samba
 ```
+nft add rule inet filter input iifname "ens160" tcp dport 2049 counter accept
+```
+> allow nfsv4
+```
 nft add 'rule inet filter input iifname "ens160" udp dport {123,323} counter accept'
 ```
 > ntp server

@@ -1,7 +1,12 @@
 ```
-hostnamectl set-hostname centos-2.my.wsr
+hostnamectl set-hostname centos.my.wsr
 ```
 > set hostname
+```
+...
+127.0.1.1 centos.my.wsr
+```
+> /etc/hosts
 ```
 [libdefaults]
 	default_realm = MY.WSR

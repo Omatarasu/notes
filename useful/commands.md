@@ -12,4 +12,7 @@ df
 ```
 blkid
 ```
-
+### test rsyslog configuration
+```
+rsyslogd -f /etc/rsyslog.conf -N 1
+```
